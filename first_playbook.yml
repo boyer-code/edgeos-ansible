@@ -1,0 +1,17 @@
+---
+#ansible-playbook pynet_edgeos/first_playbook.yml -k -i pynet_edgeos/yamsible-hosts.yml
+- name: Network Getting Started First Playbook
+
+  connection: network_cli
+#  ansible_network_os: edgeos
+# ansible_user: ubnt
+  hosts: erx
+  tasks:
+
+    - name: Get config for EdgeOS devices
+      edgeos_facts:
+        gather_subset: all
+
+    - name: Display the config
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"

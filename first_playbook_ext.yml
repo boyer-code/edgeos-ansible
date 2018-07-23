@@ -1,0 +1,28 @@
+---
+#ansible-playbook pynet_edgeos/first_playbook_ext.yml -k -i pynet_edgeos/yamsible-hosts.yml
+- name: Network Getting Started First Playbook Extended
+  connection: network_cli
+  hosts: erx
+  tasks:
+
+    - name: Get config for edgeos devices
+      edgeos_facts:
+        gather_subset: all
+
+    - name: Display the config
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+
+    - name: Update the hostname
+      edgeos_config:
+        backup: yes
+        lines:
+          - set system host-name {{hostname}}
+
+    - name: Get changed config for edgeos devices
+      edgeos_facts:
+        gather_subset: all
+
+    - name: Display the changed config
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
