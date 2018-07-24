@@ -1,5 +1,5 @@
 ---
-#ansible-playbook pynet_edgeos/first_playbook.yml -k -i pynet_edgeos/yamsible-hosts.yml
+#ansible-playbook ~/edgeos-ansible/first_playbook.yml -k -i ~/edgeos-ansible/yamsible-hosts.yml
 - name: Network Getting Started First Playbook
 
   connection: network_cli
