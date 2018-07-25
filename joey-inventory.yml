@@ -3,23 +3,32 @@
 #This is a YAML version of an Ansible inventory file for my LAN
 all:
   hosts:
-    192.168.180.252:
-      ansible_user: pi
-    192.168.180.253:
-      ansible_user: pi
+    retropi:
+     ansible_host: 192.168.180.252
+    octopi: 
+     ansible_host: 192.168.180.253
     erx1:
-      ansible_host: 192.168.180.250
-      ansible_user: ubnt
-      ansible_network_os: edgeos
-      hostname: erx1
+     ansible_host: 192.168.180.250
+     hostname: erx1
+     # ansible_user: ubnt #moved to children
+     # ansible_network_os: edgeos #moved to children
     erx2:
-      ansible_user: ubnt
-      ansible_host: 192.168.180.251
-      ansible_network_os: edgeos
-      hostname: erx2
+     ansible_host: 192.168.180.251
+     hostname: erx2
+      #ansible_network_os: edgeos #moved to children
+      #ansible_user: ubnt #moved to children
 
   children:
    erx:
     hosts:
      erx1:
      erx2:
+    vars:
+     ansible_network_os: edgeos
+     ansible_user: ubnt
+   pi:
+    hosts:
+      octopi:
+      retropi:
+    vars:
+      ansible_user: pi
