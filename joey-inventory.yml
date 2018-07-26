@@ -26,6 +26,7 @@ all:
     vars:
      ansible_network_os: edgeos
      ansible_user: ubnt
+     ansible_connection: network_cli
    pi:
     hosts:
       octopi:
