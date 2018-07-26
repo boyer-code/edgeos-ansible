@@ -1,0 +1,20 @@
+---
+- name: Get output from devices
+  hosts: erx
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+  - name: Show interfaces
+    edgeos_command:
+      commands: show interfaces
+    register: if_output
+  - name: Show ARP
+    edgeos_command:
+      commands: show arp
+    register: arp_output #this was more difficult than I expected...need the register: VARIABLE_NAME to save the output
+#then come down below and use the below debug task to actually display the results
+  - name: Display the show arp output
+    debug: var=arp_output.stdout
+  - name: Display the interfaces output
+    debug: var=if_output.stdout_lines[0][3] #without .stdout or .stdout_lines it returns BOTH
