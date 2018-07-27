@@ -1,5 +1,5 @@
 ---
-#ansible-playbook ~/edgeos-ansible/first_playbook_ext.yml -k -i ~/edgeos-ansible/yamsible-hosts.yml
+#ansible-playbook ~/edgeos-ansible/first_playbook_ext.yaml -k -i ~/edgeos-ansible/yamsible-hosts.yaml
 - name: Network Getting Started First Playbook Extended
   #connection: network_cli #define connection in inventory as "ansible_connection: network_cli"
   hosts: erx

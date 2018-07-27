@@ -1,5 +1,5 @@
 ---
-#ansible-playbook ~/edgeos-ansible/first_playbook.yml -k -i ~/edgeos-ansible/yamsible-hosts.yml
+#ansible-playbook ~/edgeos-ansible/first_playbook.yaml -k -i ~/edgeos-ansible/yamsible-hosts.yaml
 - name: Network Getting Started First Playbook
 
   #connection: network_cli move connection to inventory as "ansible_connection: network_cli"
