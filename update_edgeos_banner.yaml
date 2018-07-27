@@ -1,6 +1,5 @@
 ---
-#ansible-playbook ~/edgeos-ansible/get_arp_playbook.yaml -k -i joey-inventory.yml
-- name: Get output from devices
+- name: Update ERX banner
   hosts: erx
   gather_facts: true
   #connection: network_cli #define connection in inventory as "ansible_connection: network_cli"
