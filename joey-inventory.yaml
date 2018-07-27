@@ -28,7 +28,7 @@ all:
      ansible_user: ubnt
      ansible_connection: network_cli #needs to be ansible_connection NOT connection: (would be connection: in a playbook)
      #this breaks raw commands...need to play with syntax to get it working
-     banner: "set system login banner pre-login 'This is the text for our new banner on {{ hostname }} '"
+     banner: "set system login banner pre-login 'You are attempting to log into: {{ hostname }} If you aren't an authorized user, you should turn around"
    pi:
     hosts:
       octopi:
