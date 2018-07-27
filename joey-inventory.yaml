@@ -10,11 +10,13 @@ all:
     erx1:
      ansible_host: 192.168.180.250
      hostname: erx1
+     svi: 3
      # ansible_user: ubnt #moved to children
      # ansible_network_os: edgeos #moved to children
     erx2:
      ansible_host: 192.168.180.251
      hostname: erx2
+     svi: 4
       #ansible_network_os: edgeos #moved to children
       #ansible_user: ubnt #moved to children
 
@@ -29,6 +31,11 @@ all:
      ansible_connection: network_cli #needs to be ansible_connection NOT connection: (would be connection: in a playbook)
      #this breaks raw commands...need to play with syntax to get it working
      banner: "set system login banner pre-login 'You are attempting to log into: {{ hostname }}.  If you are not an authorized user, turn around!! '"
+     trunk_int: eth2
+     vif1: 20
+     vif2: 30
+     vlan1_net: 10.0.20.
+     vlan2_net: 10.0.30.
    pi:
     hosts:
       octopi:
