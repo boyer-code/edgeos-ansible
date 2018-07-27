@@ -1,5 +1,5 @@
 ---
-#ansible-playbook ~/edgeos-ansible/get_arp_playbook.yaml -k -i joey-inventory.yaml
+#ansible-playbook ~/edgeos-ansible/edgeos_get_arp.yaml -k -i joey-inventory.yaml
 - name: Get output from devices
   hosts: erx
   gather_facts: true

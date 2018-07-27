@@ -1,6 +1,6 @@
 ---
 #ansible-playbook ~/edgeos-ansible/edgeos_update_hostname.yaml -k -i ~/edgeos-ansible/joey-inventory.yaml
-- name: Change hostname and collect facts
+- name: Network Getting Started First Playbook Extended
   #connection: network_cli #define connection in inventory as "ansible_connection: network_cli"
   hosts: erx
   tasks:

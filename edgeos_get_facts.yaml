@@ -1,6 +1,6 @@
 ---
-#ansible-playbook ~/edgeos-ansible/first_playbook.yaml -k -i ~/edgeos-ansible/yamsible-hosts.yaml
-- name: Network Getting Started First Playbook
+#ansible-playbook ~/edgeos-ansible/edgeos_get_facts.yaml -k -i ~/edgeos-ansible/joey-inventory.yaml
+- name: First EdgeOS playbook to get facts
 
   #connection: network_cli move connection to inventory as "ansible_connection: network_cli"
 #  ansible_network_os: edgeos

@@ -1,0 +1,12 @@
+---
+#This file will attempt to call multiple EdgeOS Playbooks
+- name: Multi-playbook!
+  hosts: erx
+  tasks:
+    - debug:
+  
+- name: Play1
+  import_playbook: edgeos_show_lldp.yaml
+  
+- name: Play2  
+  import_playbook: edgeos_get_arp.yaml

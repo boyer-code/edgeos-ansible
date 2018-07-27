@@ -1,0 +1,27 @@
+---
+#this file will enable LLDP on the EdgeOS hosts specified then execute "show LLDP neighbors" and provide the output
+- name: Enable LLDP and show lldp on EdgeOS hosts
+  #connection: network_cli #define connection in inventory as "ansible_connection: network_cli"
+  hosts: erx
+  tasks:
+
+  - name: enable LLDP on remote device
+    edgeos_config:
+      lines:
+        - set service lldp
+  - name: Show lldp neighbors
+    edgeos_command:
+      commands: show lldp neighbors
+    register: neighbors_output 
+  
+  - name: Show lldp neighbors detail
+    edgeos_command:
+      commands: show lldp neighbors detail
+    register: neighbors_detail_output
+  
+  - name: Display the output of show lldp neighbors
+    debug: var=neighbors_output.stdout
+    
+  - name: Display the output of show lldp neighbors
+    debug: var=neighbors_detail_output.stdout
+  

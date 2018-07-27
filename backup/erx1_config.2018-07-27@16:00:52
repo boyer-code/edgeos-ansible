@@ -21,7 +21,7 @@ set service gui older-ciphers enable
 set service ssh port 22
 set service ssh protocol-version v2
 set system host-name erx1
-set system login banner pre-login 'this is our new banner to be displayed prior to login'
+set system login banner pre-login 'You are attempting to log into: erx1.  If you are not an authorized user, turn around '
 set system login user joey authentication encrypted-password '$6$Ujqebf13SMP$B8cRFgPwA6NNmPWw9McGEhhgn62MCqGkDzqrzcMCf8czIK0tNxOtIQGFrbZerp757QouGQnjis3AESYE2T80X.'
 set system login user joey authentication plaintext-password ''
 set system login user joey level admin

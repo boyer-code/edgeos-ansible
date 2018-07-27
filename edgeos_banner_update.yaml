@@ -1,5 +1,5 @@
 ---
-#ansible-playbook ~/edgeos-ansible/update_edgeos_banner.yaml -k -i joey-inventory.yaml
+#ansible-playbook ~/edgeos-ansible/edgeos_banner_update.yaml -k -i joey-inventory.yaml
 - name: Get output from devices
   hosts: erx
   gather_facts: true

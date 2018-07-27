@@ -1,5 +1,5 @@
 ---
-#ansible-playbook ~/edgeos-ansible/vlan_edgeos.yml -k -i ~/edgeos-ansible/yamsible-hosts.yml
+#ansible-playbook ~/edgeos-ansible/edgeos_vlan.yaml -k -i ~/edgeos-ansible/joey-inventory.yaml
 hosts: erx
   #connection: network_cli #define connection in inventory as "ansible_connection: network_cli"
 #ansible_network_os: edgeos you might think specifying these in the playbook is a good idea, but it's not...put them in inventory variables
