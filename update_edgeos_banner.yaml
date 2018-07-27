@@ -19,7 +19,7 @@
       backup: yes
       comment: "adding updated banner"
       lines: 
-        - "{{ banner }}"
+        - "{{ banner }}" #this is defined in the inventory file
 
   - name: Collect new banner config
     edgeos_command:
