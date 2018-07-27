@@ -1,0 +1,23 @@
+---
+#ansible-playbook ~/edgeos-ansible/get_arp_playbook.yaml -k -i joey-inventory.yaml
+- name: Get output from devices
+  hosts: erx
+  gather_facts: true
+  #connection: network_cli #define connection in inventory as "ansible_connection: network_cli"
+
+  tasks:
+  - name: Show interfaces
+    edgeos_command:
+      commands: show interfaces
+    register: if_output
+  - name: Show ARP
+    edgeos_command:
+      commands: show arp
+    register: arp_output #this was more difficult than I expected...need the register: VARIABLE_NAME to save the output
+#then come down below and use the below debug task to actually display the results
+  - name: Display the show arp output
+    debug: var=arp_output.stdout
+  - name: Display the interfaces output without list filter
+    debug: var=if_output.stdout_lines
+  - name: Display the interfaces output with list filter
+    debug: var=if_output.stdout_lines[0][3] #without .stdout or .stdout_lines it returns BOTH
