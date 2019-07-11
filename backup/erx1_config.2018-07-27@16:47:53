@@ -4,10 +4,14 @@ set interfaces ethernet eth0 speed auto
 set interfaces ethernet eth1 duplex auto
 set interfaces ethernet eth1 speed auto
 set interfaces ethernet eth2 duplex auto
+set interfaces ethernet eth2 mtu 2018
 set interfaces ethernet eth2 speed auto
+set interfaces ethernet eth2 vif 20 address 10.0.20.1/24
+set interfaces ethernet eth2 vif 20 mtu 2018
+set interfaces ethernet eth2 vif 30 address 10.0.30.1/24
 set interfaces ethernet eth3 duplex auto
 set interfaces ethernet eth3 speed auto
-set interfaces ethernet eth4 address 192.168.180.251/24
+set interfaces ethernet eth4 address 192.168.180.250/24
 set interfaces ethernet eth4 duplex auto
 set interfaces ethernet eth4 poe output off
 set interfaces ethernet eth4 speed auto
@@ -16,11 +20,12 @@ set interfaces switch switch0 mtu 1500
 set service gui http-port 80
 set service gui https-port 443
 set service gui older-ciphers enable
+set service lldp
 set service ssh port 22
 set service ssh protocol-version v2
-set system host-name erx2
-set system login banner pre-login 'You are attempting to log into: erx2.  If you are not an authorized user, turn around '
-set system login user joey authentication encrypted-password '$6$gzBn/1T7r1W$QvbbMeSu8soY4DDrOE7yD8gKT7mYfRLbkXZytUomItJ9xDiHtqC37TKjBVNnjYYdW9U69Yswv9z9fGMWYGxpY.'
+set system host-name erx1
+set system login banner pre-login 'You are attempting to log into: erx1.  If you are not an authorized user, turn around!! '
+set system login user joey authentication encrypted-password '$6$Ujqebf13SMP$B8cRFgPwA6NNmPWw9McGEhhgn62MCqGkDzqrzcMCf8czIK0tNxOtIQGFrbZerp757QouGQnjis3AESYE2T80X.'
 set system login user joey authentication plaintext-password ''
 set system login user joey level admin
 set system login user ubnt authentication encrypted-password '$1$zKNoUbAo$gomzUbYvgyUMcD436Wo66.'
